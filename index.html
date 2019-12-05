@@ -32,10 +32,12 @@
 	L.marker([36.636843, -121.930529]).addTo(mymap)
 		.bindPopup("<b>Take Me Home, Country Roads.</b><br />-John Denver.").openPopup();
 	var popup = L.popup();
+	var photoImg = '<img src="https://media-cdn.tripadvisor.com/media/photo-s/0f/50/83/98/john-denver-memorial.jpg" height="150px" width="150px"/>';
 	function onMapClick(e) {
 		popup
 			.setLatLng(e.latlng)
 			.setContent(e.latlng.toString())
+			.setContent("<center>My Photo </center>" + "</br>"+ photoImg)
 			.openOn(mymap);
 	}
 	mymap.on('click', onMapClick);
