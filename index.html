@@ -21,6 +21,7 @@
 
 <div id="mapid" style="width: 1500px; height: 800px;"></div>
 <script>
+	var photoImg = '<img src="https://media-cdn.tripadvisor.com/media/photo-s/0f/50/83/98/john-denver-memorial.jpg" height="150px" width="150px"/>';
 	var mymap = L.map('mapid').setView([36.636843, -121.930529], 13);
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -30,14 +31,13 @@
 		id: 'mapbox/streets-v11'
 	}).addTo(mymap);
 	L.marker([36.636843, -121.930529]).addTo(mymap)
-		.bindPopup("<b>Take Me Home, Country Roads.</b><br />-John Denver.").openPopup();
+		.bindPopup("<b>Take Me Home, Country Roads.</b><br />-John Denver.", photoImg).openPopup();
 	var popup = L.popup();
-	var photoImg = '<img src="https://media-cdn.tripadvisor.com/media/photo-s/0f/50/83/98/john-denver-memorial.jpg" height="150px" width="150px"/>';
+	
 	function onMapClick(e) {
 		popup
 			.setLatLng(e.latlng)
 			.setContent(e.latlng.toString())
-			.setContent("<center>My Photo </center>" + "</br>"+ photoImg)
 			.openOn(mymap);
 	}
 	mymap.on('click', onMapClick);
