@@ -32,7 +32,7 @@
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox/streets-v11'
 	}).addTo(mymap);
-	L.marker([36.636843, -121.930529]).bindPopup("<b>Take Me Home, Country Roads.</b><br />-John Denver.", photoImg).addTo(mymap);
+	L.marker([36.636843, -121.930529]).bindPopup(photoImg).addTo(mymap);
 	var popup = L.popup();
 	
 	function onMapClick(e) {
