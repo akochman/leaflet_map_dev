@@ -35,7 +35,7 @@
 	function onMapClick(e) {
 		popup
 			.setLatLng(e.latlng)
-			.setContent("Lat/Long: " + e.latlng.toString())
+			.setContent(e.latlng.toString())
 			.openOn(mymap);
 	}
 	mymap.on('click', onMapClick);
