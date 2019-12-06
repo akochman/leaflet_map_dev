@@ -184,10 +184,6 @@
 		"OpenStreetMap": OSM
 	};
 
-	var overlayMaps = {
-		"States": geojson
-	};
-
 	
 	// create fullscreen control
 	var fsControl = L.control.fullscreen();
@@ -202,7 +198,7 @@
 		if(window.console) window.console.log('exitFullscreen');
 	}); 
 
-	L.control.layers(baseMaps, overlayMaps).addTo(map);
+	L.control.layers(baseMaps).addTo(map);
 </script>
 
 
