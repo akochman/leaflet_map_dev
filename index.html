@@ -132,19 +132,6 @@
 	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
 
 
-	// create fullscreen control
-	var fsControl = L.control.fullscreen();
-	// add fullscreen control to the map
-	map.addControl(fsControl);
-
-	// detect fullscreen toggling
-	map.on('enterFullscreen', function(){
-		if(window.console) window.console.log('enterFullscreen');
-	});
-	map.on('exitFullscreen', function(){
-		if(window.console) window.console.log('exitFullscreen');
-	});
-
 	var legend = L.control({position: 'bottomright'});
 
 	legend.onAdd = function (map) {
@@ -170,7 +157,18 @@
 	legend.addTo(map);
 
 	
+	// create fullscreen control
+	var fsControl = L.control.fullscreen();
+	// add fullscreen control to the map
+	map.addControl(fsControl);
 
+	// detect fullscreen toggling
+	map.on('enterFullscreen', function(){
+		if(window.console) window.console.log('enterFullscreen');
+	});
+	map.on('exitFullscreen', function(){
+		if(window.console) window.console.log('exitFullscreen');
+	}); 
 </script>
 
 
