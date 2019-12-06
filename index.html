@@ -53,9 +53,7 @@
 <script type="text/javascript">
 
 	var map = L.map('map',  {
-            center: new L.LatLng(37.8, -96),
-            zoom: 6,
-            layers: [OSM, geojson]
+            layers: [OSM]
         }).setView([37.8, -96], 4);
 
 	var OSM = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
